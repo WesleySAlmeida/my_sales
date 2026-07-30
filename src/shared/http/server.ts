@@ -1,10 +1,10 @@
-import  express  from "express";
+import express from "express";
 import cors from 'cors';
 import "reflect-metadata";
-import routes from './routes/index.ts'
+import routes from './routes/index'
 import 'express-async-errors'
-import ErrorHandleMiddleware from "../middlewares/ErrorHandleMiddleware.ts";
-import { AppDataSource } from "../typeorm/data-source.ts"
+import ErrorHandleMiddleware from "../middlewares/ErrorHandleMiddleware";
+import { AppDataSource } from "../typeorm/data-source"
 
 AppDataSource.initialize().then( async () => {
   const app = express();
