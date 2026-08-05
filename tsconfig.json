@@ -6,7 +6,11 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["ES2022"],
-    "types": ["node"],
+    "types": ["node", "express"],
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
     "ignoreDeprecations": "6.0",
     "baseUrl": "./src",
     "paths": {
