@@ -17,7 +17,7 @@ interface ICreateOrderProducts {
 }
 
 export class CreateOrderService {
-  async execute({customer_id, products}: ICreateOrder): Promise<Order> {
+  async execute({ customer_id, products }: ICreateOrder): Promise<Order> {
     const customerExists = await customerRepository.findById(Number(customer_id));
 
     if(!customerExists) {
