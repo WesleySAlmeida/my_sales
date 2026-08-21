@@ -6,12 +6,15 @@ import "reflect-metadata";
 import routes from './routes/index'
 import ErrorHandleMiddleware from "../middlewares/ErrorHandleMiddleware";
 import { AppDataSource } from "../typeorm/data-source"
+import rateLimiter from '@shared/middlewares/rateLimiter';
 
 AppDataSource.initialize().then( async () => {
   const app = express();
 
   app.use(cors());
   app.use(express.json());
+
+  app.use(rateLimiter)
 
   app.use(routes);
   app.use(errors());
